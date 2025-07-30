@@ -62,7 +62,6 @@ a:focus-visible, button:focus-visible {
   color: white;
   background-color: black;
   border-bottom: rgba(216, 216, 216, 0.25) solid 1px;
-  container: banner / inline-size;
 }
 
 .banner-container {
@@ -110,44 +109,7 @@ a:focus-visible, button:focus-visible {
     padding: 0.75rem 0;
 }
 
-.playlists-container {
-  max-width: 1200px;
-}
-
-.clear-container {
-  max-width: 1200px;
-  display: flex;
-  margin: 0 auto;
-}
-
-.playlist-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  align-items: center;
-  grid-column-gap: .75rem;
-}
-
-.playlist {
-  background-color: #121212;
-  color: white;
-  transition: background-color 0.25s, color 0.25s;
-  min-width: 265px;
-
-  img {
-    width: 200px;
-    border-radius: 8px;
-  }
-}
-
-.playlist:hover {
-  color: black;
-}
-
-.playlist:focus-visible {
-  z-index: 999999;
-}
-
-@container banner (max-width: 770px) {
+@media (max-width: 770px) {
 
   .logo-container {
     gap: 2rem;
@@ -173,28 +135,9 @@ a:focus-visible, button:focus-visible {
     margin: 0 auto;
     max-width: 90%;
   }
-
-  .playlists-container, .clear-container {
-    margin: 3rem 3rem;
-  }
-}
-
-@media (max-width: 770px) {
-    .playlists-container {
-        margin: 3rem 1rem;
-        padding: 2rem 1rem;
-    }
 }
 
 @media (max-width: 680px) {
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  h3 {
-    font-size: 1.4rem;
-  }
 
   .banner-container {
     max-width: 95%;
@@ -204,15 +147,4 @@ a:focus-visible, button:focus-visible {
     gap: 1rem;
   }
 
-  .playlist {
-    margin: 0 auto;
-  }
 }
-
-@media (max-width: 590px) {
-  .playlist-row {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-}
-
-

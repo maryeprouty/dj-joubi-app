@@ -31,10 +31,28 @@ export async function playSelectedPlaylist(trackIds, device_id) {
             "uris": trackUris
         }
 
-        await axios.put(`/api/playSelectedPlaylist?device_id=${device_id}`, data, { withCredentials: true });
+        await axios.put(`/api/play?device_id=${device_id}`, data, { withCredentials: true });
 
     } catch (error) {
         console.error('Error playing this playlist: ', error);
+        throw error;
+    }
+}
+
+export async function resumePlayback(device_id) {
+    try {
+        await axios.put(`/api/play?device_id=${device_id}`, null, { withCredentials: true });
+    } catch (error) {
+        console.error('Error resuming playback: ', error);
+        throw error;
+    }
+}
+
+export async function pausePlayback(device_id) {
+    try {
+        await axios.put(`/api/pause?device_id=${device_id}`, null, { withCredentials: true });
+    } catch (error) {
+        console.error('Error pausing the playback: ', error);
         throw error;
     }
 }

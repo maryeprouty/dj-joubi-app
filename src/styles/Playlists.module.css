@@ -1,0 +1,111 @@
+.playlistsContainer {
+  max-width: 1200px;
+}
+
+.clearContainer {
+  max-width: 1200px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.playlistRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-items: center;
+  grid-column-gap: .75rem;
+}
+
+.playlist {
+  background-color: #121212;
+  color: white;
+  transition: background-color 0.25s, color 0.25s;
+  min-width: 265px;
+  position: relative;
+
+  img {
+    width: 200px;
+    border-radius: 8px;
+  }
+}
+
+.playlist:hover {
+  color: black;
+}
+
+.playlist:focus-visible, .playlist:focus {
+  z-index: 9999;
+}
+
+.selectedPlaylist:hover:after, .selectedPlaylist:focus-visible:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65px;
+  height: 65px;
+  background: url("../assets/pause-button.png");
+  background-size: cover;
+  background-position: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+
+.unselectedPlaylist:hover:after, .unselectedPlaylist:focus-visible:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65px;
+  height: 65px;
+  background: url("../assets/play-button.png");
+  background-size: cover;
+  background-position: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+
+@media (max-width: 1460px) {
+
+  .playlistsContainer, .clearContainer {
+    margin: 3rem 3rem;
+  }
+
+}
+
+@media (max-width: 770px) {
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    .playlistsContainer {
+        margin: 2rem 1rem;
+        padding: 1rem 1rem;
+    }
+
+}
+
+@media (max-width: 680px) {
+
+  .playlist {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 590px) {
+
+  .playlistRow {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+}

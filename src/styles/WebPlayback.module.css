@@ -8,7 +8,6 @@
   position: relative;
   width: 90%;
   max-width: 1200px;
-  z-index: 1;
   container: player / inline-size;
 }
 
@@ -25,6 +24,7 @@
   bottom: 0;
   width: 100%;
   border-top: 5px black solid;
+  z-index: 10000;
 }
 
 .mainContainer{
@@ -56,8 +56,8 @@
   float: left;
   margin-right: 10px;
   text-align: right;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
 .btnSpotify {
@@ -107,19 +107,22 @@
   align-items: center;
 }
 
+@media (max-width: 1460px) {
+  .mainWrapper {
+    margin: 0 auto;
+    max-width: 85%;
+  }
+}
+
 @media (max-width: 770px) {
 
   .mainWrapper {
+    max-width: 95%;
     padding: 10px 0;
   }
 
   .nowPlaying {
     gap: 0.4rem;
-  }
-
-  .nowPlayingCover {
-    width: 80px;
-    height: 80px;
   }
 
   .nowPlayingName {
@@ -142,5 +145,20 @@
 
   .playControls {
     gap: 0.4rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .nowPlayingCover {
+    width: 50px;
+    height: 50px;
+  }
+
+  .nowPlayingName {
+    font-size: 1rem;
+  }
+
+  .nowPlayingArtist {
+    font-size: 0.8rem;
   }
 }

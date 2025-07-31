@@ -7,10 +7,9 @@ import pauseButton from '../assets/pause-button.png';
 
 import styles from '../styles/WebPlayback.module.css';
 
-function WebPlayback({deviceId, setDeviceId, playStarted, setPlayStarted}) {
+function WebPlayback({deviceId, setDeviceId, playStarted, setPlayStarted, isPaused, setPaused}) {
 
     const scriptRef = useRef(null);
-    const [is_paused, setPaused] = useState(true);
     const [player, setPlayer] = useState(undefined);
     const [is_active, setActive] = useState(() => {
         const storedActive = localStorage.getItem('is_active');
@@ -135,8 +134,8 @@ function WebPlayback({deviceId, setDeviceId, playStarted, setPlayStarted}) {
                             </button>
                         </div>
 
-                        <button className={styles.btnPlay} aria-label={is_paused ? "Play" : "Pause "} onClick={() => { togglePlay() }} >
-                            <img className={styles.btnPlayImg} src={is_paused ? playButton : pauseButton} alt=""/>
+                        <button className={styles.btnPlay} aria-label={isPaused ? "Play" : "Pause "} onClick={() => { togglePlay() }} >
+                            <img className={styles.btnPlayImg} src={isPaused ? playButton : pauseButton} alt=""/>
                         </button>
 
                         <div className={styles.trackSelectContainer}>

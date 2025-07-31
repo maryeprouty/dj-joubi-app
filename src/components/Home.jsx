@@ -9,6 +9,7 @@ export default function Home() {
     const [playlists, setPlaylists] = useState([]);
     const [deviceId, setDeviceId] = useState(null);
     const [playStarted, setPlayStarted] = useState(false);
+    const [isPaused, setPaused] = useState(true);
     const [selectedPlaylist, setSelectedPlaylist] = useState(null);
     const [prevPlaylist, setPrevPlaylist] = useState(null);
 
@@ -22,7 +23,7 @@ export default function Home() {
     }, []);
 
     const playPlaylist = async (playlist) => {
-        if (playlist === selectedPlaylist) {
+        if (playlist === selectedPlaylist && !isPaused) {
             // If this playlist is already playing, pause it.
             await pausePlayback(deviceId);
             setPrevPlaylist(selectedPlaylist);
@@ -50,7 +51,7 @@ export default function Home() {
                     <div className={styles.playlistRow}>
                         {playlists.map((playlist) => (
                             <button key={playlist.id} 
-                            className={`${styles.playlist} ${playlist === selectedPlaylist ? styles.selectedPlaylist : styles.unselectedPlaylist}`} 
+                            className={`${styles.playlist} ${playlist === selectedPlaylist && !isPaused ? styles.selectedPlaylist : styles.unselectedPlaylist}`} 
                             onClick={() => 
                                 playPlaylist(playlist)}>
                                 <img src={playlist?.images[0]?.url} alt=''/>
@@ -70,6 +71,8 @@ export default function Home() {
                 setDeviceId={setDeviceId} 
                 playStarted={playStarted} 
                 setPlayStarted={setPlayStarted}
+                isPaused={isPaused}
+                setPaused={setPaused}
             />
         </>
     )

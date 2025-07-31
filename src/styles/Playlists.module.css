@@ -33,7 +33,7 @@
 }
 
 .playlist:focus-visible, .playlist:focus {
-  z-index: 999999;
+  z-index: 9999;
 }
 
 .selectedPlaylist:hover:after, .selectedPlaylist:focus-visible:after {
@@ -89,8 +89,8 @@
     }
 
     .playlistsContainer {
-        margin: 3rem 1rem;
-        padding: 2rem 1rem;
+        margin: 2rem 1rem;
+        padding: 1rem 1rem;
     }
 
 }

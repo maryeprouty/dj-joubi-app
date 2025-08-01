@@ -18,7 +18,7 @@ export function addPlayedTrack(track) {
 
 export function setCurrentTrack(track) {
     currentTrackName = getTrackName(track);
-    currentTrackId = track.id;
+    currentTrackId = track?.id;
 }
 
 export function getTracks() {

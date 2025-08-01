@@ -8,13 +8,4 @@ export default defineConfig({
     react(),
     mkcert()
   ],
-  server: {
-      proxy: {
-        '/api': {
-          target: 'https://dj-joubi-d0bdbvdta9hycrc5.eastus2-01.azurewebsites.net',
-          changeOrigin: true,
-          secure: true
-        },
-      },
-    },
 })

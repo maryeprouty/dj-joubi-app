@@ -8,6 +8,8 @@ This project is built using React + Vite.
 
 ## Local Build and Development Instructions
 1. Clone the repo into Visual Studio Code or your IDE of choice.
-2. Open a terminal and run ```npm install``` to generate node_modules.
-3. Run ```npm run dev``` to start the local development server.
-4. Navigate to https://127.0.0.1:5173 to view your local changes.
+2. In axios.helper.js, replace the baseURL with 'http://127.0.0.1:8888'.
+3. In Login.jsx, replace the href with "http://127.0.0.1:8888/api/login".
+4. Open a terminal and run ```npm install``` to generate node_modules.
+5. Run ```npm run dev``` to start the local development server.
+6. Navigate to https://127.0.0.1:5173 to view your local changes.
